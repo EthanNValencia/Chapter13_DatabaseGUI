@@ -101,6 +101,7 @@ namespace Chapter13_DatabaseGUI
                 memberDS = new DataSet();
                 memberDataAdapter.Fill(memberDS, "memberTable");
                 // this.dataGrid.SetDataBinding(memberDS, "memberTable");
+                this.dataGridView1.DataSource = memberDS.Tables["memberTable"].DefaultView;
             }
             catch (Exception ex)
             {

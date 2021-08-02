@@ -33,6 +33,8 @@ namespace Chapter13_DatabaseGUI
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnLoadData = new System.Windows.Forms.Button();
             this.btnUpdateData = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGetData
@@ -74,18 +76,30 @@ namespace Chapter13_DatabaseGUI
             this.btnUpdateData.UseVisualStyleBackColor = true;
             this.btnUpdateData.Click += new System.EventHandler(this.btnUpdateData_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(220, 13);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(507, 302);
+            this.dataGridView1.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(739, 364);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnUpdateData);
             this.Controls.Add(this.btnLoadData);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnGetData);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -96,6 +110,7 @@ namespace Chapter13_DatabaseGUI
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btnLoadData;
         private System.Windows.Forms.Button btnUpdateData;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
