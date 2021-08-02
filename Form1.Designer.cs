@@ -39,7 +39,7 @@ namespace Chapter13_DatabaseGUI
             // 
             // btnGetData
             // 
-            this.btnGetData.Location = new System.Drawing.Point(60, 322);
+            this.btnGetData.Location = new System.Drawing.Point(58, 302);
             this.btnGetData.Name = "btnGetData";
             this.btnGetData.Size = new System.Drawing.Size(94, 29);
             this.btnGetData.TabIndex = 0;
@@ -53,12 +53,12 @@ namespace Chapter13_DatabaseGUI
             this.listBox1.ItemHeight = 20;
             this.listBox1.Location = new System.Drawing.Point(12, 12);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(187, 304);
+            this.listBox1.Size = new System.Drawing.Size(187, 284);
             this.listBox1.TabIndex = 1;
             // 
             // btnLoadData
             // 
-            this.btnLoadData.Location = new System.Drawing.Point(220, 321);
+            this.btnLoadData.Location = new System.Drawing.Point(220, 304);
             this.btnLoadData.Name = "btnLoadData";
             this.btnLoadData.Size = new System.Drawing.Size(94, 29);
             this.btnLoadData.TabIndex = 3;
@@ -68,7 +68,7 @@ namespace Chapter13_DatabaseGUI
             // 
             // btnUpdateData
             // 
-            this.btnUpdateData.Location = new System.Drawing.Point(611, 323);
+            this.btnUpdateData.Location = new System.Drawing.Point(656, 304);
             this.btnUpdateData.Name = "btnUpdateData";
             this.btnUpdateData.Size = new System.Drawing.Size(116, 29);
             this.btnUpdateData.TabIndex = 4;
@@ -83,7 +83,7 @@ namespace Chapter13_DatabaseGUI
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(507, 302);
+            this.dataGridView1.Size = new System.Drawing.Size(552, 285);
             this.dataGridView1.TabIndex = 5;
             // 
             // Form1
@@ -91,7 +91,7 @@ namespace Chapter13_DatabaseGUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(739, 364);
+            this.ClientSize = new System.Drawing.Size(784, 342);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnUpdateData);
             this.Controls.Add(this.btnLoadData);
