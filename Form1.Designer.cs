@@ -98,7 +98,7 @@ namespace Chapter13_DatabaseGUI
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnGetData);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Database Example";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

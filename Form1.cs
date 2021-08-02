@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
-using System.Data;
 /* 
 (if System.Data.OleDb is not functioning then do the following)
 Navigate to the Tools Tab
@@ -27,7 +26,7 @@ namespace Chapter13_DatabaseGUI
 {
     public partial class Form1 : Form
     {
-        private string sConnection = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Ethan\OneDrive\Documents\ExampleDatabase.accdb";
+        private string sConnection = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Ethan\source\VisualStudioRepos\Chapter13_DatabaseGUI\ExampleDatabase.accdb";
         private OleDbConnection dbConn;
         private OleDbCommand dbCmd;
         private string sql;
@@ -90,16 +89,18 @@ namespace Chapter13_DatabaseGUI
         {
             try
             {
+                /*
+                 * This gets the data and puts the data in the Data Grid View. 
+                 */
                 dbConn = new OleDbConnection(sConnection);
                 sql = "SELECT * FROM memberTable ORDER BY LastName ASC, FirstName ASC;";
                 dbCmd = new OleDbCommand();
                 dbCmd.CommandText = sql;
                 dbCmd.Connection = dbConn;
-
                 memberDataAdapter = new OleDbDataAdapter();
                 memberDataAdapter.SelectCommand = dbCmd;
                 memberDS = new DataSet();
-                memberDataAdapter.Fill(memberDS, "memberTable");
+                memberDataAdapter.Fill(memberDS, "memberTable"); // Fill opens and closes the connection. 
                 // this.dataGrid.SetDataBinding(memberDS, "memberTable");
                 this.dataGridView1.DataSource = memberDS.Tables["memberTable"].DefaultView;
             }
