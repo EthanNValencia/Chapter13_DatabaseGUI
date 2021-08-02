@@ -31,6 +31,8 @@ namespace Chapter13_DatabaseGUI
         {
             this.btnGetData = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnLoadData = new System.Windows.Forms.Button();
+            this.btnUpdateData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGetData
@@ -52,12 +54,34 @@ namespace Chapter13_DatabaseGUI
             this.listBox1.Size = new System.Drawing.Size(187, 304);
             this.listBox1.TabIndex = 1;
             // 
+            // btnLoadData
+            // 
+            this.btnLoadData.Location = new System.Drawing.Point(220, 321);
+            this.btnLoadData.Name = "btnLoadData";
+            this.btnLoadData.Size = new System.Drawing.Size(94, 29);
+            this.btnLoadData.TabIndex = 3;
+            this.btnLoadData.Text = "Load Data";
+            this.btnLoadData.UseVisualStyleBackColor = true;
+            this.btnLoadData.Click += new System.EventHandler(this.btnLoadData_Click);
+            // 
+            // btnUpdateData
+            // 
+            this.btnUpdateData.Location = new System.Drawing.Point(611, 323);
+            this.btnUpdateData.Name = "btnUpdateData";
+            this.btnUpdateData.Size = new System.Drawing.Size(116, 29);
+            this.btnUpdateData.TabIndex = 4;
+            this.btnUpdateData.Text = "Update Data";
+            this.btnUpdateData.UseVisualStyleBackColor = true;
+            this.btnUpdateData.Click += new System.EventHandler(this.btnUpdateData_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(214, 364);
+            this.ClientSize = new System.Drawing.Size(739, 364);
+            this.Controls.Add(this.btnUpdateData);
+            this.Controls.Add(this.btnLoadData);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnGetData);
             this.Name = "Form1";
@@ -70,6 +94,8 @@ namespace Chapter13_DatabaseGUI
 
         private System.Windows.Forms.Button btnGetData;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnLoadData;
+        private System.Windows.Forms.Button btnUpdateData;
     }
 }
 

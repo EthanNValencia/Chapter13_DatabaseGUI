@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Data;
 /* 
 (if System.Data.OleDb is not functioning then do the following)
 Navigate to the Tools Tab
@@ -29,9 +30,14 @@ namespace Chapter13_DatabaseGUI
         private string sConnection = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Ethan\OneDrive\Documents\ExampleDatabase.accdb";
         private OleDbConnection dbConn;
         private OleDbCommand dbCmd;
-        private string sql = "SELECT * FROM memberTable ORDER BY LastName ASC, FirstName ASC;";
+        private string sql;
         private OleDbDataReader dbReader; // This provides Read-Only access. It cannot update the database.
-        Member aMember;
+        private Member aMember;
+
+        private OleDbDataAdapter memberDataAdapter;
+        private DataSet memberDS;
+        private OleDbCommandBuilder cBuilder;
+        // private System.Windows.Forms.DataGrid dataGrid;
 
         public Form1()
         {
@@ -46,6 +52,7 @@ namespace Chapter13_DatabaseGUI
                 /*
                  * Construct an object to store the connection string.
                  */
+                sql = "SELECT * FROM memberTable ORDER BY LastName ASC, FirstName ASC;";
                 dbConn = new OleDbConnection(sConnection);
                 dbConn.Open();
                 /*
@@ -74,10 +81,44 @@ namespace Chapter13_DatabaseGUI
             }
         }
 
-
         private void btnGetData_Click(object sender, EventArgs e)
         {
             AccessDatabaseQuery();
+        }
+
+        private void btnLoadData_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dbConn = new OleDbConnection(sConnection);
+                sql = "SELECT * FROM memberTable ORDER BY LastName ASC, FirstName ASC;";
+                dbCmd = new OleDbCommand();
+                dbCmd.CommandText = sql;
+                dbCmd.Connection = dbConn;
+
+                memberDataAdapter = new OleDbDataAdapter();
+                memberDataAdapter.SelectCommand = dbCmd;
+                memberDS = new DataSet();
+                memberDataAdapter.Fill(memberDS, "memberTable");
+                // this.dataGrid.SetDataBinding(memberDS, "memberTable");
+            }
+            catch (Exception ex)
+            {
+                // Not worried about this right now. 
+            }
+        }
+
+        private void btnUpdateData_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cBuilder = new OleDbCommandBuilder(memberDataAdapter);
+                memberDataAdapter.Update(memberDS, "memberTable");
+            }
+            catch (Exception exc)
+            {
+
+            }
         }
     }
     public class Member
